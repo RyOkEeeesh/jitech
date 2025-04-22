@@ -190,7 +190,7 @@ const chartProcess = () => {
       }
     })
     .catch(error => {
-      console.error('エラーが発生しました:', error);
+      console.error('error:', error);
     });
 
   $('.admin-date').onchange = chartProcess;
