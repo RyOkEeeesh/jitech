@@ -5,7 +5,7 @@ define('EDIT_LOG_PATH', './logs/edit.log');
 
 // 必要であればIPアドレスを変更
 define('DSN_JITECH', 'mysql:host=127.0.0.1;dbname=jitech;charset=utf8');
-define('DSN_HEW_USER', 'mysql:host=127.0.0.1;dbname=jitech_user;charset=utf8');
+define('DSN_JITECH_USER', 'mysql:host=127.0.0.1;dbname=jitech_user;charset=utf8');
 // 必要であればウーザー名、パスワードを変更
 define('USERNAME', 'root');
 define('PASSWORD', '');

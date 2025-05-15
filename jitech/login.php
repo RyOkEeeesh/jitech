@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pw = hashPW($user,$_POST['pw']);
     try {
       $_SESSION['token'] = mt_rand();
-      $pdo = new PDO(DSN_HEW_USER, USERNAME, PASSWORD, OPTIONS);
+      $pdo = new PDO(DSN_JITECH_USER, USERNAME, PASSWORD, OPTIONS);
       $st = $pdo -> prepare('SELECT user, role FROM userList WHERE user = :user AND pw = :pw');
       $st -> execute(['user' => $user, 'pw' => $pw]);
       if ($row = $st -> fetch()) {
