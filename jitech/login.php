@@ -69,12 +69,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
   <title>login</title>
+  <?php
+  if (isset($_SESSION['nextTry']) && $_SESSION['nextTry'] > time()) {
+    echo '
+    <script defer>
+      let limitTime = ' . $_SESSION['nextTry'] - time() . ';
+      setInterval(() => {
+      document.querySelector(\'.limit-time\').textContent = limitTime;
+      if (limitTime < 0) window.location.reload();
+    }, 1000);
+    </script>
+    ';
+  }
+  ?>
 </head>
 <body>
   <div class="login-wrap">
@@ -83,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php
 if (isset($_SESSION['nextTry']) && $_SESSION['nextTry'] > time()) {
-  echo '<p class="login-err-msg-limit">ログイン試行回数上限に達しました。<br>' . $_SESSION['nextTry'] - time() . '秒後に再度お試しください。</p>';
+  echo '<p class="login-err-msg-limit">ログイン試行回数上限に達しました。<br><span class="limit-time">' . $_SESSION['nextTry'] - time() . '</span>秒後に再度お試しください。</p>';
 } else {
   if (isset($_SESSION['token'])) {
     $token = $_SESSION['token'];
