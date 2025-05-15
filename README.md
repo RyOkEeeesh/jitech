@@ -54,6 +54,6 @@ define('PASSWORD', '');
 
 データベースサーバの負荷を減らすため、PHPの拡張機能である[APCu](https://www.php.net/manual/ja/book.apcu.php)を使っています。APCuがPHPにインストールされていなくても正常に動作します。  
 使用したい場合は、[こちら](https://pecl.php.net/package/apcu)から、dllファイルをインストールするか```pecl install apcu ```を、実行してください。  
-インストール完了後、php.ini に ```extension=php_apcu.dll``` を追加してください  
+インストール完了後、php.ini に ```extension=php_apcu.dll``` を追加してください。  
 
 [jitech](https://github.com/RyOkEeeesh/jitech/tree/main/jitech)をドキュメントルートに配置すると、使用できると思います。
