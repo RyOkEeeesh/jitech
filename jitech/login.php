@@ -69,7 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/common.css">
@@ -81,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script defer>
       let limitTime = ' . $_SESSION['nextTry'] - time() . ';
       setInterval(() => {
-      document.querySelector(\'.limit-time\').textContent = limitTime;
+      document.querySelector(\'.limit-time\').textContent = --limitTime;
       if (limitTime < 0) window.location.reload();
     }, 1000);
     </script>
