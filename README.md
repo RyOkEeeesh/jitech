@@ -40,7 +40,7 @@
 define('DSN_JITECH', 'mysql:host=127.0.0.1;dbname=jitech;charset=utf8');
 define('DSN_HEW_USER', 'mysql:host=127.0.0.1;dbname=jitech_user;charset=utf8');
 ```
-mysql:host=127.0.0.1 のIPアドレスを、リモートホストのIPアドレスかドメイン名に変更してください。  
+```mysql:host=127.0.0.1``` のIPアドレスを、リモートホストのIPアドレスかドメイン名に変更してください。  
 また、MySQLのユーザ名、パスワードを変更する場合は [fn.php](https://github.com/RyOkEeeesh/jitech/blob/main/jitech/fn.php) の10行目
 ```PHP
 define('USERNAME', 'root');
