@@ -36,7 +36,7 @@ function makeShow($post, $postQuentity) {
       <p class="">'.$post['title'].'</p>
     </div>
     <div class="iframe-wrap">
-      <iframe class="show__iframe" src="'.glob('./'.UPLOAD_DIR.'/'.$post['parentDir'].'/index.*')[0].'" frameborder="0" loading="lazy" sandbox="allow-scripts"></iframe>
+      <iframe class="show__iframe" src="'.glob('./'.UPLOAD_DIR.'/'.$post['parentDir'].'/index.*')[0].'" frameborder="0" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
     </div>
   </div>
   ';

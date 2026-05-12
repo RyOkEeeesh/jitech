@@ -1,0 +1,4 @@
+src/logs/access.log
+src/uploads
+/src/thumbnails/*
+!/src/thumbnails/post.png
